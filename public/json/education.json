@@ -1,0 +1,23 @@
+{
+   "name": "Education",
+   "data": [
+      {
+         "course": "Bachelor of Technology - Computer Science and Engineering",
+         "institution": "Graphic Era Deemed to be University",
+         "score": "CGPA - 9.3/10",
+         "duration": "2015-2019"
+      },
+      {
+         "course": "Indian School Certificate (ISC)",
+         "institution": "St. Dominic Savio College",
+         "score": "94.6%",
+         "duration": "2014"
+      },
+      {
+         "course": "Indian School of Certificate Examination (ICSE)",
+         "institution": "St. Dominic Savio College",
+         "score": "93.6%",
+         "duration": "2012"
+      }
+   ]
+}

@@ -1,0 +1,27 @@
+{
+   "name": "Work Experience",
+   "data": [
+      {
+         "position": "React Developer",
+         "organization": "Tata Consultancy Services Ltd.",
+         "details": [
+            "As a React Native developer, I worked on developing an application to be used by doctors for initial patient diagnosis, for the client. It involved creating the application for different devices and for both android and ios operating system",
+            "As a React.js developer I worked on a pilot project to migrate sites from their current stack to react based frontend with Gatsby.js to generate the static version. The entire data was taken from a Drupal CMS which was managed by the backend team"
+         ]
+      },
+      {
+         "position": "Software Intern",
+         "organization": "Managineers Educational Services India Pvt. Ltd.",
+         "details": [
+            "Worked on front end and managing backend access with the database in Php."
+         ]
+      },
+      {
+         "position": "Technical Content Writer Intern",
+         "organization": "GeeksForGeeks",
+         "details": [
+            "Wrote technical articles mostly related to programming. Also wrote articles on various aspects of JavaScript."
+         ]
+      }
+   ]
+}

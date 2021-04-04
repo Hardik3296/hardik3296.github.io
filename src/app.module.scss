@@ -1,0 +1,41 @@
+@import "./fonts.scss";
+
+.container{
+   padding-left: 50px;
+   padding-right: 50px;
+   .firstDiv{
+      display:flex;
+      flex:2;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .image{
+         height: 150px;
+         width: 150px;
+         border-radius: 150px;
+      }
+   }
+   .secondDiv{
+      .name{
+         font-size:75px;
+         font-family: ArchivoBold;
+         margin-bottom:20px;
+      }
+      flex:3;
+      .contact{
+         display:flex;
+         align-items:center;
+         a:first-child{
+           margin-left:0px;
+         }
+         a{
+            margin-left:50px;
+         }
+      }
+   }
+}
+
+.row{
+   display:flex;
+   flex-direction: row;
+}
