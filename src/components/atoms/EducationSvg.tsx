@@ -1,11 +1,12 @@
 import React from "react";
 
-const EducationSVG = (): JSX.Element => (
+const EducationSVG = (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>): JSX.Element => (
    <svg
       data-name="Layer 1"
       width={795.39431}
       height={574.03802}
       viewBox="0 0 795.39431 574.03802"
+      {...props}
    >
       <defs>
          <linearGradient

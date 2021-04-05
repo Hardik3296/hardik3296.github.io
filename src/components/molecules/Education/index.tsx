@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import EducationSVG from "../../atoms/EducationSvg";
+import styles from "./styles.module.scss";
 
 interface EducationData {
    name: string,
@@ -25,16 +26,20 @@ const Education = (): JSX.Element => {
    }, [])
 
    return (
-      <div>
-         {education?.data.map((record, index) => {
-            return <div key={record.course + index}>
-               <p>{record.course}</p>
-               <p>{record.institution}</p>
-               <p>{record.score}</p>
-               <p>{record.duration}</p>
-            </div>
-         })}
-         <EducationSVG />
+      <div className={styles.container} id="education">
+         <div className={styles.imageDiv}>
+            <EducationSVG width={"40vw"} height={"40vh"} />
+         </div>
+         <div className={styles.textDiv}>
+            {education?.data.map((record, index) => {
+               return <div key={record.course + index}>
+                  <p className={styles.course}>{record.course}</p>
+                  <p className={styles.institution}>{record.institution}</p>
+                  <p className={styles.score}>{record.score}</p>
+                  <p className={styles.duration}>{record.duration}</p>
+               </div>
+            })}
+         </div>
       </div>
    );
 }

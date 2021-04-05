@@ -1,0 +1,34 @@
+@import "../../../fonts.scss";
+
+.container{
+   display: flex;
+   flex:1;
+   flex-direction:row;
+   .imageDiv{
+      display:flex;
+      flex:1;
+      align-items: center;
+      justify-content: center;
+   }
+   .textDiv{
+      display:flex;
+      flex:1;
+      flex-direction: column;
+      font-family: ArchivoRegular;
+      .course{
+         font-family: ArchivoBold;
+         font-size: 20px;
+      }
+      .institution{
+         font-family: ArchivoMedium;
+         font-weight: 700;
+         opacity: 0.8;
+      }
+      .score{
+         font-family:ArchivoBold;  
+      }
+      .duration{
+         font-family: ArchivoMedium
+      }
+   }
+}

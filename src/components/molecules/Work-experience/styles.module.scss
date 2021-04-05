@@ -1,0 +1,31 @@
+@import "../../../fonts.scss";
+
+.container{
+   display:flex;
+   flex:1;
+   flex-direction:row;
+   .imageDiv{
+      display:flex;
+      flex:1;
+      justify-content: center;
+      align-items: center;
+   }
+   .textDiv{
+      display:flex;
+      flex:1;
+      font-family: ArchivoRegular;
+      flex-direction: column;
+      .position{
+         font-family: ArchivoBold;
+         font-size: 22px;
+      }
+      .organization{
+         font-family: ArchivoMedium;
+         font-weight:700;
+         opacity:0.8;
+      }
+      .description{
+         letter-spacing: 1px;
+      }
+   }
+}
