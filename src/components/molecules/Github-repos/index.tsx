@@ -12,7 +12,8 @@ const GitHubRepos = (): JSX.Element => {
       stars: string,
       forks: string,
       language: string,
-      description: string
+      description: string,
+      link: string,
    }
 
    const [pinnedRepos, setPinnedRepos] = useState([]);
@@ -26,17 +27,25 @@ const GitHubRepos = (): JSX.Element => {
       fetchData();
    }, []);
 
+   const handleClick = (link: string): void => {
+      window.open(link, "_blank");
+   }
+
    return (
       <div className={styles.container} id="github-repos">
          {pinnedRepos !== [] && pinnedRepos.map((repo: repoType) => {
-            return <div key={repo.repo}>
-               <p className={styles.repo}>{repo.repo}</p>
-               <span className={styles.stars}><StarOutlineOutlined style={{ color: "#6c63ff" }} />{repo.stars}</span>
-               <span className={styles.forks}><img src={image} alt="" />{repo.forks}</span>
-               <p className={styles.description}>{repo.description}</p>
-            </div>
+            return (
+               <div key={repo.repo} onClick={() => { handleClick(repo.link) }} className={styles.innerContainer}>
+                  <p className={styles.repo}>{repo.repo.toUpperCase()}</p>
+                  <div className={styles.row}>
+                     <span className={styles.stars}><StarOutlineOutlined style={{ color: "#6c63ff", fontSize: 28 }} />{repo.stars}</span>
+                     <span className={styles.forks}><img src={image} alt="" style={{ width: 28, height: 28 }} />{repo.forks}</span>
+                  </div>
+                  <p className={styles.description}>{repo.description}</p>
+               </div>
+            );
          })}
-      </div>
+      </div >
    );
 }
 

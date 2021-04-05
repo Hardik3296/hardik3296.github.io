@@ -12,9 +12,9 @@ const Profile = (): JSX.Element => {
          <div className={styles.secondDiv}>
             <p className={styles.name}>Hardik Gaur</p>
             <div className={styles.contact}>
-               <a href="https://www.linkedin.com/in/hardik-gaur-135891122/" target="blank"><LinkedIn style={{ color: "blue" }} /></a>
-               <a href="mailto:hardik3296@outlook.com"><Email /></a>
-               <a href="https://github.com/Hardik3296" target="blank"><GitHub /></a>
+               <a href="https://www.linkedin.com/in/hardik-gaur-135891122/" target="blank"><LinkedIn style={{ color: "#0077b5", fontSize: 50 }} /></a>
+               <a href="mailto:hardik3296@outlook.com"><Email style={{ color: "#6c63ff", fontSize: 50 }} /></a>
+               <a href="https://github.com/Hardik3296" target="blank"><GitHub style={{ color: "#000000", fontSize: 50 }} /></a>
             </div>
          </div>
       </div>
