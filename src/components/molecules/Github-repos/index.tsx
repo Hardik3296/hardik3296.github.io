@@ -32,20 +32,24 @@ const GitHubRepos = (): JSX.Element => {
    }
 
    return (
-      <div className={styles.container} id="github-repos">
-         {pinnedRepos !== [] && pinnedRepos.map((repo: repoType) => {
-            return (
-               <div key={repo.repo} onClick={() => { handleClick(repo.link) }} className={styles.innerContainer}>
-                  <p className={styles.repo}>{repo.repo.toUpperCase()}</p>
-                  <div className={styles.row}>
-                     <span className={styles.stars}><StarOutlineOutlined style={{ color: "#6c63ff", fontSize: 28 }} />{repo.stars}</span>
-                     <span className={styles.forks}><img src={image} alt="" style={{ width: 28, height: 28 }} />{repo.forks}</span>
+      <>
+         <p className={styles.heading}>Projects</p>
+         <div className={styles.container} id="github-repos">
+
+            {pinnedRepos !== [] && pinnedRepos.map((repo: repoType) => {
+               return (
+                  <div key={repo.repo} onClick={() => { handleClick(repo.link) }} className={styles.innerContainer}>
+                     <p className={styles.repo}>{repo.repo.toUpperCase()}</p>
+                     <div className={styles.row}>
+                        <span className={styles.stars}><StarOutlineOutlined style={{ color: "#6c63ff", fontSize: 28 }} />{repo.stars}</span>
+                        <span className={styles.forks}><img src={image} alt="" style={{ width: 28, height: 28 }} />{repo.forks}</span>
+                     </div>
+                     <p className={styles.description}>{repo.description}</p>
                   </div>
-                  <p className={styles.description}>{repo.description}</p>
-               </div>
-            );
-         })}
-      </div >
+               );
+            })}
+         </div >
+      </>
    );
 }
 

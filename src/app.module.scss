@@ -1,24 +1,33 @@
 @import "./fonts.scss";
 
+html{
+   scroll-margin-top: 15vh;
+}
+
 body{
    margin:0px;
-   scroll-behavior: smooth;
 }
 
 .container{
    display:flex;
    flex:1;
-   overflow: hidden;
-   height:100vh;
+   overflow-y:hidden;
    flex-direction: row;
 }
 .sidebar{
+   display:flex;
+   flex-direction: column;
    height:100vh;
+   align-items: center;
+   justify-content: center;
    flex:1;
-   overflow: hidden;
+   overflow-y: hidden;
+   background: #deefe7;
 }
 .content{
+   display:flex;
+   flex-direction: column;
+   height:100vh;
    flex:9;
    overflow-y:scroll;
-   padding-left:2vw;
 }
