@@ -21,14 +21,15 @@
       .position{
          font-family: ArchivoBold;
          font-size: 22px;
+         opacity:0.87;
       }
       .organization{
          font-family: ArchivoMedium;
-         font-weight:700;
-         opacity:0.8;
+         font-weight:500;
+         opacity:0.70;
       }
       .description{
-         letter-spacing: 1px;
+         opacity: 1;
       }
    }
 }

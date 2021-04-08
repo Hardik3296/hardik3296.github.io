@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
+import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
 import WorkingSVG from "../../atoms/WorkingSvg";
 import styles from "./styles.module.scss";
 
@@ -15,6 +16,7 @@ interface WorkEx {
 const WorkExperience = (): JSX.Element => {
 
    const [workEx, setWorkEx] = useState<WorkEx>();
+   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
 
    useEffect(() => {
       const fetchData = async () => {
@@ -25,7 +27,7 @@ const WorkExperience = (): JSX.Element => {
    }, [])
 
    return (
-      <div className={styles.container} id="work-experience">
+      <div className={styles.container} id="work-experience" style={theme.text}>
          <div className={styles.textDiv}>
             {workEx?.data.map((record) => {
                return <div key={record.organization + record.position}>

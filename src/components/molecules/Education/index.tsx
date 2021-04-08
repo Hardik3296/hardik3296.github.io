@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import EducationSVG from "../../atoms/EducationSvg";
 import styles from "./styles.module.scss";
+import { ThemeInterface, ThemeContext } from "../../../utils/contexts/ThemeContext";
 
 interface EducationData {
    name: string,
@@ -16,6 +17,7 @@ interface EducationData {
 const Education = (): JSX.Element => {
 
    const [education, setEducation] = useState<EducationData>();
+   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
 
    useEffect(() => {
       const fetchData = async () => {
@@ -30,7 +32,7 @@ const Education = (): JSX.Element => {
          <div className={styles.imageDiv}>
             <EducationSVG width={"40vw"} height={"40vh"} />
          </div>
-         <div className={styles.textDiv}>
+         <div className={styles.textDiv} style={theme.text}>
             {education?.data.map((record, index) => {
                return <div key={record.course + index}>
                   <p className={styles.course}>{record.course}</p>
