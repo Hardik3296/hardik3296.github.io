@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useCallback, useContext, useState } from "rea
 import { throttle } from "lodash";
 import styles from "./app.module.scss";
 import Sidebar from "./components/molecules/Sidebar";
-import Header from "./components/organisms/Header"
+import Header from "./components/organisms/Header";
 import Body from "./components/organisms/Body";
 import { ThemeContext, ThemeInterface } from "./utils/contexts/ThemeContext";
 import { CSSTransition } from "react-transition-group";

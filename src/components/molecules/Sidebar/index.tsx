@@ -26,10 +26,7 @@ const Sidebar = (): JSX.Element => {
                key={themeRef.current}
                classNames={"theme"}
                addEndListener={() => { }}
-               timeout={{
-                  exit: 600,
-                  enter: 500
-               }}
+               timeout={500}
             >
                <div className={styles.bottomIconDiv} onClick={() => {
                   themeRef.current = themeRef.current === "light" ? "dark" : "light";
