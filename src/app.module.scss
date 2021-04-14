@@ -1,17 +1,12 @@
 @import "./fonts.scss";
 
-html{
-   scroll-margin-top: 15vh;
-}
-
 body{
-   margin:0px;
+   margin:0;
 }
 
 .container{
    display:flex;
    flex:1;
-   overflow-y:hidden;
    flex-direction: row;
 }
 .sidebar{
@@ -25,8 +20,10 @@ body{
 }
 .content{
    display:flex;
+   position: relative;
    flex-direction: column;
    height:100vh;
    flex:9;
    overflow-y:scroll;
+   scroll-behavior: smooth;
 }

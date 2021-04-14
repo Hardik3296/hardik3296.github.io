@@ -5,6 +5,8 @@ import Sidebar from "./components/molecules/Sidebar";
 import Header from "./components/organisms/Header"
 import Body from "./components/organisms/Body";
 import { ThemeContext, ThemeInterface } from "./utils/contexts/ThemeContext";
+import { CSSTransition } from "react-transition-group";
+import "./animation.scss";
 
 
 function App(): JSX.Element {
@@ -26,10 +28,19 @@ function App(): JSX.Element {
         <Sidebar />
       </div>
       <div className={styles.content} onScroll={(event) => throttledHandleScroll(event)}>
-        {headerVisible && <Header />}
+        <CSSTransition
+          in={headerVisible}
+          timeout={300}
+          classNames={"header"}
+          addEndListener={() => { }}
+          mountOnEnter={true}
+          unmountOnExit={true}
+        >
+          <Header />
+        </CSSTransition>
         <Body />
-      </div >
-    </div>
+      </div>
+    </div >
   );
 }
 

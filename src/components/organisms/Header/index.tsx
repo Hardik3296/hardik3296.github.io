@@ -7,7 +7,7 @@ import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeConte
 const Header = (): JSX.Element => {
 
    const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
-
+   console.log("Header rendered");
    return (
       <div className={styles.container} style={theme.header}>
          <img src={image} className={styles.image} alt="" />

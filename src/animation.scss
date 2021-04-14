@@ -1,0 +1,12 @@
+.header-enter{
+   transform: translateY(-105%);
+}
+.header-enter-active{
+   transform: translateY(0);
+   transition: transform 0.3s linear;
+}
+
+.header-exit-active{
+   transform: translateY(-105%);
+   transition: transform 0.3s linear;
+}

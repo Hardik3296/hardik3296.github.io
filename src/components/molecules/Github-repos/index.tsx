@@ -35,7 +35,6 @@ const GitHubRepos = (): JSX.Element => {
 
    return (
       <div className={styles.container} id="github-repos" style={theme.text}>
-
          {pinnedRepos !== [] && pinnedRepos.map((repo: repoType) => {
             return (
                <div key={repo.repo} onClick={() => { handleClick(repo.link) }} className={styles.innerContainer} style={theme.repos.div}>

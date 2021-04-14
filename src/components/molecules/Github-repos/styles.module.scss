@@ -2,15 +2,16 @@
 
 .container {
    display:flex;
+   flex-direction: row;
    flex-wrap:wrap;
    padding-top: 15vh;
    margin-top:-15vh;
-   justify-content: space-between;
    & > div {
     flex: 1 1 300px;
-    margin-bottom: 8vh;
+    justify-content: space-evenly;
+    margin-bottom:20px;
     padding:10px 10px;
-    margin-right: 5vh;
+    margin-right: 20px;
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 15px;
@@ -20,6 +21,7 @@
     &:hover{
       cursor: pointer;
     }
+    height: max-content;
   }
    .repo{
       align-self:center;

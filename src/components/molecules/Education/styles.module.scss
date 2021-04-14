@@ -4,7 +4,6 @@
    display: flex;
    flex:1;
    flex-direction:row;
-   margin-bottom:5vh;
    padding-top: 15vh;
    margin-top:-15vh;
    .imageDiv{
@@ -17,7 +16,6 @@
       display:flex;
       flex:2;
       flex-direction: column;
-      font-family: ArchivoRegular;
       .course{
          font-family: ArchivoBold;
          font-size: 20px;

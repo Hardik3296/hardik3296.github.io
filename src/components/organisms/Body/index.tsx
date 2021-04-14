@@ -9,7 +9,7 @@ import { ThemeInterface, ThemeContext } from "../../../utils/contexts/ThemeConte
 const Body = (): JSX.Element => {
 
    const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext)
-
+   console.log("Body rendered");
    return (
       <div className={styles.container} style={theme.body}>
          <Profile />

@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height:100vh;
   flex-direction:column;
   .topIconDiv{
      display:flex;
@@ -15,5 +14,8 @@
     display:flex;
     bottom:2vh;
     position: fixed;
+    &:hover{
+      cursor: pointer;
+    }
   }
 }

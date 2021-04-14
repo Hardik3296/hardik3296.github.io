@@ -20,7 +20,7 @@ export interface ThemeInterface {
    header: {
       backgroundColor: string,
       boxShadow: string,
-      border: string
+      borderBottom: string
    },
    body: {
       backgroundColor: string
@@ -46,20 +46,20 @@ export interface ThemeArrayInterface {
 export const themes: ThemeArrayInterface = {
    light: {
       sidebar: {
-         backgroundColor: "#deefe7",
+         backgroundColor: "#f2f2f2",
       },
       header: {
-         backgroundColor: "#fff",
-         boxShadow: "0 2px 10px 0 rgba(31, 38, 135, 0.37)",
-         border: "1px solid rgba( 255, 255, 255, 0.18)",
+         backgroundColor: "#f2f2f2",
+         boxShadow: "8px 0px 10px 4px rgba(31, 38, 135, 0.37)",
+         borderBottom: "1px solid rgba( 255, 255, 255, 0.18)",
       },
       body: {
-         backgroundColor: "#fff"
+         backgroundColor: "#ffffff"
       },
       repos: {
          div: {
             background: "rgba( 255, 255, 255, 0.0005 )",
-            boxShadow: "0 20px 40px 0 rgba( 31, 38, 135, 0.37 )"
+            boxShadow: "0 10px 20px 4px rgba( 31, 38, 135, 0.37 )"
          }
       },
       text: {
@@ -83,8 +83,8 @@ export const themes: ThemeArrayInterface = {
       },
       header: {
          backgroundColor: "#242424",
-         boxShadow: "0 10px 20px rgba(0, 0, 0, 0.45)",
-         border: "1px solid rgba( 0, 0, 0, 0.18)",
+         boxShadow: "8px 0px 10px 4px rgba(0, 0, 0, 0.45)",
+         borderBottom: "1px solid rgba( 0, 0, 0, 0.18)",
       },
       body: {
          backgroundColor: "#181818"
@@ -92,7 +92,7 @@ export const themes: ThemeArrayInterface = {
       repos: {
          div: {
             background: "rgba( 40, 40, 40, 0.25 )",
-            boxShadow: "0 20px 40px rgba(0, 0, 0, 0.85)"
+            boxShadow: "0 10px 20px 4px rgba(0, 0, 0, 0.85)"
          }
       },
       text: {
