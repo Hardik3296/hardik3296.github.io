@@ -22,11 +22,13 @@
          font-size:75px;
          font-family: ArchivoMedium;
          margin-bottom:20px;
+         width: fit-content;
       }
       flex:3;
       .contact{
          display:flex;
          align-items:center;
+         width: fit-content;
          a:first-child{
          margin-left:0px;
          }

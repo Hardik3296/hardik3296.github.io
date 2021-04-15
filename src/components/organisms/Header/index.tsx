@@ -4,6 +4,7 @@ import image from "../../../assets/images/example.jpg"
 import styles from "./styles.module.scss";
 import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
 
+
 const Header = (): JSX.Element => {
 
    const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);

@@ -3,6 +3,7 @@ import axios from "axios";
 import EducationSVG from "../../atoms/EducationSvg";
 import styles from "./styles.module.scss";
 import { ThemeInterface, ThemeContext } from "../../../utils/contexts/ThemeContext";
+import SlideAnimation from "../../atoms/SlideAnimation";
 
 interface EducationData {
    name: string,
@@ -30,7 +31,12 @@ const Education = (): JSX.Element => {
    return (
       <div className={styles.container} id="education">
          <div className={styles.imageDiv}>
-            <EducationSVG width={"40vw"} height={"40vh"} />
+            <SlideAnimation
+               mountCondition={true}
+               slideDirection={"slide-from-left"}
+            >
+               <EducationSVG width={"40vw"} height={"40vh"} />
+            </SlideAnimation>
          </div>
          <div className={styles.textDiv} style={theme.text}>
             {education?.data.map((record, index) => {
