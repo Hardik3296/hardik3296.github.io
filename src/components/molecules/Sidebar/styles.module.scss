@@ -14,8 +14,46 @@
     display:flex;
     bottom:2vh;
     position: fixed;
+    @media (max-width:1024px){
+      bottom:0;
+      position:relative;
+    }
+
     &:hover{
       cursor: pointer;
     }
   }
+}
+
+.imageIcons{
+  @media (max-width:1024px){
+    width:8vh;
+    height:8vh;
+  }
+  width:12vh;
+  height:12vh;
+}
+
+.person{
+  color: #6c63ff;
+  font-size: 10vw !important;
+}
+
+.github{
+  color:#6c63ff;
+  font-size: 8vw !important; 
+}
+
+.nightsStay{ 
+  color: #777777;
+  font-size: 8vw !important;
+  opacity: 0.87;
+}
+
+.sunny{
+  color: #f5f509;
+  @media (max-width:1024px){
+    font-size: 8vw !important; 
+  }
+  font-size:12vw !important;
 }

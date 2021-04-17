@@ -3,9 +3,12 @@
 .container{
    display:flex;
    flex:1;
-   padding-top: 15vh;
-   margin-top:-15vh;
+   padding-top: 13vh;
+   margin-top:-13vh;
    flex-direction:row;
+   @media (max-width:1024px) {
+      flex-direction:column;
+    }
    .imageDiv{
       display:flex;
       flex:1;

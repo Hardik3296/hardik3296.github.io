@@ -2,11 +2,19 @@
 
 body{
    margin:0;
+   padding:0;
+}
+
+.outerContainer{
+   height:100vh;
+   overflow-y: hidden;
+   overflow-x:hidden;
 }
 
 .container{
    display:flex;
    flex:1;
+   height:100vh;
    flex-direction: row;
 }
 .sidebar{
@@ -17,6 +25,9 @@ body{
    justify-content: center;
    flex:1;
    overflow-y: hidden;
+   @media (max-width:1024px){
+      display: none;
+    }
 }
 .content{
    display:flex;
@@ -24,6 +35,9 @@ body{
    flex-direction: column;
    height:100vh;
    flex:9;
+   @media (max-width:1024px){
+      flex:1;
+    }
    overflow-y:scroll;
    scroll-behavior: smooth;
 }

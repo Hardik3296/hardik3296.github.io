@@ -1,0 +1,10 @@
+.bottomNavigation{
+   @media (max-width:1024px){
+      display:block;
+      width:100%;
+      position: sticky;
+      bottom:0;
+      height:10vh !important;
+   }
+   display:none;
+}

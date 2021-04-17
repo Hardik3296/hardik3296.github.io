@@ -4,14 +4,24 @@
    display:flex;
    flex-direction: row;
    flex-wrap:wrap;
-   padding-top: 15vh;
-   margin-top:-15vh;
+   @media (max-width:768px) {
+    flex-direction:column;
+   }
+   @media(max-width:1024px){
+    margin-bottom:10vh;
+   }
+   padding-top: 13vh;
+   margin-top:-13vh;
    & > div {
     flex: 1 1 300px;
-    justify-content: space-evenly;
     margin-bottom:20px;
-    padding:10px 10px;
     margin-right: 20px;
+    padding:10px 10px;
+    @media (max-width:768px) {
+      flex:1 1;
+      flex-basis:content;
+      margin-right:0;
+    }
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 15px;

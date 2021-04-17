@@ -1,9 +1,12 @@
 @import "../../../fonts.scss";
 
 .container{
+   @media (max-width:1024px) { 
+      display:none;
+   }
    position: fixed;
-   top:0;
    width:100%;
+   top:0;
    height:13vh;
    z-index:1;
    padding:1vh 1vh;

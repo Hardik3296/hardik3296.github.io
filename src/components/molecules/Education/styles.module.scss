@@ -4,8 +4,11 @@
    display: flex;
    flex:1;
    flex-direction:row;
-   padding-top: 15vh;
-   margin-top:-15vh;
+   padding-top: 13vh;
+   margin-top:-13vh;
+   @media (max-width:1024px) {
+      flex-direction:column;
+    }
    .imageDiv{
       display:flex;
       flex:1;
@@ -16,19 +19,24 @@
       display:flex;
       flex:2;
       flex-direction: column;
+      flex-wrap: wrap;
       .course{
+         word-wrap: break-word;
          font-family: ArchivoBold;
          font-size: 20px;
       }
       .institution{
+         word-wrap: break-word;
          font-family: ArchivoMedium;
          font-weight: 700;
          opacity: 0.8;
       }
       .score{
+         word-wrap: break-word;
          font-family:ArchivoBold;  
       }
       .duration{
+         word-wrap: break-word;
          font-family: ArchivoMedium
       }
    }

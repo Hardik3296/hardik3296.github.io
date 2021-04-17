@@ -8,9 +8,6 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 import "./animation.scss";
 
 const Sidebar = (): JSX.Element => {
-
-   console.log("sidebar is rendered");
-
    const [theme, setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    const themeRef = useRef(theme === themes.light ? "light" : "dark");
    return (
