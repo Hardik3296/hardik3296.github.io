@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { memo, ReactNode } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./animation.scss";
 
@@ -22,4 +22,4 @@ const SlideAnimation = ({ children, slideDirection, mountCondition }: SlideAnima
    )
 }
 
-export default SlideAnimation;
+export default memo(SlideAnimation);

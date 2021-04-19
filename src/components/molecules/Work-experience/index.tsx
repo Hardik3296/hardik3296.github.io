@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
+import { Dispatch, memo, SetStateAction, useContext, useEffect, useState } from "react";
 import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
 import WorkingSVG from "../../atoms/WorkingSvg";
 import styles from "./styles.module.scss";
@@ -46,4 +46,4 @@ const WorkExperience = (): JSX.Element => {
    );
 }
 
-export default WorkExperience;
+export default memo(WorkExperience);

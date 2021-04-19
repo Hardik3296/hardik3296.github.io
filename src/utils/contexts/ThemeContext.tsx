@@ -35,7 +35,12 @@ export interface ThemeInterface {
          boxShadow: string
       }
    }
-   icons: IconInterface
+   icons: IconInterface,
+   error: {
+      text: {
+         color: string,
+      }
+   }
 }
 
 export interface ThemeArrayInterface {
@@ -75,6 +80,11 @@ export const themes: ThemeArrayInterface = {
          mail: {
             color: "#6c63ff"
          }
+      },
+      error: {
+         text: {
+            color: "#B00020"
+         }
       }
    },
    dark: {
@@ -107,6 +117,11 @@ export const themes: ThemeArrayInterface = {
          },
          mail: {
             color: "#ffffff"
+         }
+      },
+      error: {
+         text: {
+            color: "#CF6679"
          }
       }
    }

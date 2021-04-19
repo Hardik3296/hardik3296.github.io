@@ -1,9 +1,6 @@
 @import "../../../fonts.scss";
 
 .container{
-   @media (max-width:1024px) { 
-      display:none;
-   }
    position: fixed;
    width:100%;
    top:0;
@@ -18,10 +15,24 @@
    &>p{
       font-family: ArchivoMedium;
       font-size: 2.2rem;
+      @media (max-width:320px) { 
+         font-size: 1.5rem;
+      }
    }
    .image{
       height:10vh;
       width:10vh;
       border-radius: 10vh;
+   }
+   .iconDiv{
+      @media (max-width:768px) { 
+         display:none;
+      }
+   }
+   .drawerDiv{
+      display:none;
+      @media (max-width:768px) { 
+         display:block;
+      }
    }
 }

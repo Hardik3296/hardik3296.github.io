@@ -1,6 +1,5 @@
 .icon{
-   &:last-child{
-      margin-right:0;
+   &:hover{
+      cursor: pointer;
    }
-   margin-right:2vw;
 }

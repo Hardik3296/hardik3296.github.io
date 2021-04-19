@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
+import { Dispatch, memo, SetStateAction, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import EducationSVG from "../../atoms/EducationSvg";
 import styles from "./styles.module.scss";
@@ -52,4 +52,4 @@ const Education = (): JSX.Element => {
    );
 }
 
-export default Education;
+export default memo(Education);

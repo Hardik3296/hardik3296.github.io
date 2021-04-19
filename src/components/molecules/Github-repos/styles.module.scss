@@ -8,9 +8,9 @@
     flex-direction:column;
    }
    @media(max-width:1024px){
-    margin-bottom:10vh;
+    margin-bottom:10vw;
    }
-   padding-top: 13vh;
+   padding-top: 18vh;
    margin-top:-13vh;
    & > div {
     flex: 1 1 300px;
@@ -28,10 +28,15 @@
     border: 1px solid rgba( 0, 0, 0, 0.18 );
   }
   .innerContainer{
+    height:200px;
+    will-change: transform;
     &:hover{
       cursor: pointer;
+      @media(min-width:1024px){
+        transform: scale(1.05);
+        transition:transform 0.3s linear;
+      }
     }
-    height: max-content;
   }
    .repo{
       align-self:center;
@@ -55,6 +60,16 @@
         display: flex;
         align-items: center;
       }
+   }
+   .projectSVG{
+     @media(max-width:1024px){
+       display:flex;
+       align-self: center;
+       justify-self: center;
+       height:20vw;
+       width:20vw;
+     }
+     display:none
    }
  }
  

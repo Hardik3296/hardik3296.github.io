@@ -1,16 +1,15 @@
-import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
+import { Dispatch, memo, SetStateAction, useContext, useEffect, useState } from "react";
 import { StarOutlineOutlined } from "@material-ui/icons";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import styles from "./styles.module.scss";
 import image from "../../../assets/images/code-fork.png";
 import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
+import useAsyncError from "../../../utils/AsyncErrorHandler";
 
 interface repoType {
    repo: string,
-   owner: string,
    stars: string,
    forks: string,
-   language: string,
    description: string,
    link: string,
 }
@@ -19,11 +18,26 @@ const GitHubRepos = (): JSX.Element => {
 
    const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    const [pinnedRepos, setPinnedRepos] = useState([]);
+   const createError = useAsyncError();
+   const compareFunc = (firstParam: repoType, secondParam: repoType): boolean => {
+      return firstParam.forks > secondParam.forks;
+   }
 
    useEffect(() => {
+      let results: AxiosResponse<any>, thrain: AxiosResponse<any>, emulator: AxiosResponse<any>;
       const fetchData = async () => {
-         const results = await axios.get(`${process.env.REACT_APP_GITHUB_PINNED_REPOS}${process.env.REACT_APP_GITHUB_USERNAME}`);
-         setPinnedRepos(results.data);
+         try {
+            results = await axios.get(`${process.env.REACT_APP_GITHUB_PINNED_REPOS}${process.env.REACT_APP_GITHUB_USERNAME}`);
+            thrain = await axios.get(`${process.env.REACT_APP_GITHUB_COLLABORATOR}thrain`);
+            emulator = await axios.get(`${process.env.REACT_APP_GITHUB_COLLABORATOR}8085-Emulator`);
+         } catch (e) {
+            createError(e);
+         }
+         let filteredResult = results.data.filter((details: repoType) => details.repo.toLowerCase() !== "thrain" && details.repo.toLowerCase() != "8085-emulator");
+         filteredResult.push({ repo: thrain.data.name, stars: thrain.data.stargazers_count, forks: thrain.data.forks, description: thrain.data.description, link: thrain.data.html_url });
+         filteredResult.push({ repo: emulator.data.name, stars: emulator.data.stargazers_count, forks: emulator.data.forks, description: emulator.data.description, link: emulator.data.html_url });
+         await filteredResult.sort(compareFunc);
+         setPinnedRepos(filteredResult);
       }
 
       fetchData();
@@ -51,4 +65,4 @@ const GitHubRepos = (): JSX.Element => {
    );
 }
 
-export default GitHubRepos;
+export default memo(GitHubRepos);

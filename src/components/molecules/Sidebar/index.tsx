@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useContext, useRef } from "react";
+import { Dispatch, memo, SetStateAction, useContext, useRef } from "react";
 import { GitHub, Person, WbSunny, NightsStay } from "@material-ui/icons";
 import styles from "./styles.module.scss";
 import studyImage from "../../../assets/images/study.png";
@@ -40,4 +40,4 @@ const Sidebar = (): JSX.Element => {
    );
 }
 
-export default Sidebar;
+export default memo(Sidebar);

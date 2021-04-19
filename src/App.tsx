@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useCallback, useContext, useState } from "react";
+import { Dispatch, memo, SetStateAction, useCallback, useContext, useRef, useState } from "react";
 import { throttle } from "lodash";
 import styles from "./app.module.scss";
 import Sidebar from "./components/molecules/Sidebar";
@@ -13,9 +13,12 @@ import BottomNavbar from "./components/molecules/BottomNavbar";
 function App(): JSX.Element {
   const [headerVisible, setHeaderVisible] = useState<boolean>(false);
   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+  const profileRef = useRef<HTMLDivElement>();
 
   const handleScroll = (event: any): any => {
-    if (event.target.scrollTop >= 420)
+    if (profileRef && profileRef.current)
+      console.log("ref=", (profileRef.current?.clientHeight - (0.13) * window.innerHeight), event.target.scrollTop);
+    if (profileRef && profileRef.current && event.target.scrollTop >= profileRef?.current?.clientHeight - (0.13) * window.innerHeight)
       setHeaderVisible(true);
     else
       setHeaderVisible(false);
@@ -40,7 +43,7 @@ function App(): JSX.Element {
           >
             <Header />
           </CSSTransition>
-          <Body />
+          <Body profileRef={profileRef ? profileRef : { current: null }} />
         </div>
       </div >
       <BottomNavbar />
@@ -48,4 +51,4 @@ function App(): JSX.Element {
   );
 }
 
-export default App;
+export default memo(App);
