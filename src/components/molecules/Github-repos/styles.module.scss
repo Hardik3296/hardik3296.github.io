@@ -6,6 +6,7 @@
    flex-wrap:wrap;
    opacity:0;
    transform: translateX(-10%);
+   will-change: opacity, transform;
    @media (max-width:768px) {
     flex-direction:column;
    }

@@ -16,6 +16,7 @@
       align-items: center;
       opacity:0;
       transform: translateX(10%);
+      will-change: opacity, trasform;
    }
    .textDiv{
       display:flex;
@@ -24,6 +25,7 @@
       flex-direction: column;
       opacity:0;
       transform: translateX(-10%);
+      will-change: opacity, trasform;
       .position{
          font-family: ArchivoBold;
          font-size: 22px;

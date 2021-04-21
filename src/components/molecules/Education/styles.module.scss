@@ -16,6 +16,7 @@
       justify-content: center;
       opacity:0;
       transform: translateX(-10%);
+      will-change: opacity, transform;
    }
    .textDiv{
       display:flex;
@@ -24,6 +25,7 @@
       flex-wrap: wrap;
       opacity:0;
       transform: translateX(10%);
+      will-change: opacity, transform;
       .course{
          word-wrap: break-word;
          font-family: ArchivoBold;
