@@ -28,7 +28,6 @@ const Profile = ({ profileRef }: { profileRef: MutableRefObject<HTMLDivElement> 
                </div>
             </SlideAnimation>
          </div>
-
       </div>
    );
 }

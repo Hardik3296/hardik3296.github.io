@@ -15,6 +15,7 @@ const SlideAnimation = ({ children, slideDirection }: SlideAnimationProps): JSX.
          appear={true}
          classNames={slideDirection}
          addEndListener={() => { }}
+         timeout={1500}
       >
          {children}
       </CSSTransition>

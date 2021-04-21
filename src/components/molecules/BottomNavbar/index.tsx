@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useContext, memo, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useContext, memo, useRef, useState } from "react";
 import { GitHub, NightsStay, Person, WbSunny } from "@material-ui/icons";
 import studyImage from "../../../assets/images/study.png";
 import newJob from "../../../assets/images/new-job.png";
@@ -9,10 +9,8 @@ import bottomStyles from "./styles.module.scss";
 import { ThemeContext, ThemeInterface, themes } from "../../../utils/contexts/ThemeContext";
 
 const BottomNavbar = (): JSX.Element => {
-   const [value, setValue] = useState("About me");
    const [theme, setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    const themeRef = useRef(theme === themes.light ? "light" : "dark");
-   const iconSize = window.innerWidth < 320 ? 20 : 0;
 
    return (
       <div className={bottomStyles.bottomNavigation} style={theme.sidebar}>

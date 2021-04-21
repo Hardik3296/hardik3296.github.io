@@ -1,11 +1,11 @@
 .animateHorizontalDone{
    opacity:1 !important;
    transform: translateX(0%) !important;
-   transition: all 0.5s linear;
+   transition: all 1.3s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .animateVerticalDone{
    opacity:1 !important;
    transform: translateY(0%) !important;
-   transition: all 0.5s linear;
+   transition: all 1.3s cubic-bezier(0.33, 1, 0.68, 1);
 }
