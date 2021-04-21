@@ -14,12 +14,16 @@
       flex:1;
       justify-content: center;
       align-items: center;
+      opacity:0;
+      transform: translateX(10%);
    }
    .textDiv{
       display:flex;
       flex:2;
       font-family: ArchivoRegular;
       flex-direction: column;
+      opacity:0;
+      transform: translateX(-10%);
       .position{
          font-family: ArchivoBold;
          font-size: 22px;

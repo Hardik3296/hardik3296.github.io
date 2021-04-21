@@ -5,14 +5,13 @@ import "./animation.scss";
 interface SlideAnimationProps {
    children: ReactNode,
    slideDirection?: string,
-   mountCondition: boolean
 }
 
-const SlideAnimation = ({ children, slideDirection, mountCondition }: SlideAnimationProps): JSX.Element => {
-   slideDirection = slideDirection ? slideDirection : "slide-from-left";
+const SlideAnimation = ({ children, slideDirection }: SlideAnimationProps): JSX.Element => {
+   slideDirection = slideDirection ? slideDirection : "slide-in-from-left";
    return (
       <CSSTransition
-         in={mountCondition}
+         in={true}
          appear={true}
          classNames={slideDirection}
          addEndListener={() => { }}
@@ -22,4 +21,4 @@ const SlideAnimation = ({ children, slideDirection, mountCondition }: SlideAnima
    )
 }
 
-export default memo(SlideAnimation);
+export default SlideAnimation;

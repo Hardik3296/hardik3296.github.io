@@ -12,17 +12,15 @@ const Profile = ({ profileRef }: { profileRef: MutableRefObject<HTMLDivElement> 
    return (
       <div className={styles.row} id="me" style={theme.text} ref={profileRef}>
          <div className={styles.firstDiv}>
-            <SlideAnimation slideDirection={"slide-in-from-left"} mountCondition={true}>
+            <SlideAnimation slideDirection={"slide-in-from-left"}>
                <img src={image} alt="me" className={styles.image} />
             </SlideAnimation>
          </div>
-
          <div className={styles.secondDiv}>
-            <SlideAnimation slideDirection={"slide-in-from-right"} mountCondition={true}>
+            <SlideAnimation slideDirection={"slide-in-from-right"}>
                <p className={styles.name}>Hardik Gaur</p>
             </SlideAnimation>
             <SlideAnimation
-               mountCondition={true}
                slideDirection={"slide-in-from-bottom"}
             >
                <div className={styles.contact}>

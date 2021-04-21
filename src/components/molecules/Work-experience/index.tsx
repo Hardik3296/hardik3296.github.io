@@ -1,8 +1,9 @@
 import axios from "axios";
-import { Dispatch, memo, SetStateAction, useContext, useEffect, useState } from "react";
+import { Dispatch, memo, SetStateAction, useContext, useEffect, useRef, useState } from "react";
 import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
 import WorkingSVG from "../../atoms/WorkingSvg";
 import styles from "./styles.module.scss";
+import animationStyles from "../../../assets/animation.module.scss";
 
 interface WorkEx {
    name: string,
@@ -16,19 +17,40 @@ interface WorkEx {
 const WorkExperience = (): JSX.Element => {
 
    const [workEx, setWorkEx] = useState<WorkEx>();
+   const [animation, setAnimation] = useState<boolean>(false);
    const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const ref = useRef<HTMLDivElement>(null);
 
    useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach(entry => {
+            if (entry.isIntersecting) {
+               setAnimation(true);
+               if (ref && ref.current)
+                  observer.unobserve(ref.current);
+            }
+         })
+      }, { root: null, rootMargin: '0px', threshold: 0.6 });
+
       const fetchData = async () => {
          const data = await axios.get("./json/work-experience.json");
          setWorkEx(data.data);
       }
       fetchData();
-   }, [])
+
+      if (ref && ref.current) {
+         observer.observe(ref.current);
+      }
+
+      return () => {
+         if (ref && ref.current)
+            observer.unobserve(ref.current);
+      }
+   }, []);
 
    return (
-      <div className={styles.container} id="work-experience" style={theme.text}>
-         <div className={styles.textDiv}>
+      <div className={styles.container} id="work-experience" style={theme.text} ref={ref}>
+         <div className={`${styles.textDiv} ${animation ? animationStyles.animateHorizontalDone : {}}`}>
             {workEx?.data.map((record) => {
                return <div key={record.organization + record.position}>
                   <p className={styles.position}>{record.position}</p>
@@ -39,7 +61,7 @@ const WorkExperience = (): JSX.Element => {
                </div>
             })}
          </div>
-         <div className={styles.imageDiv}>
+         <div className={`${styles.imageDiv} ${animation ? animationStyles.animateHorizontalDone : {}}`}>
             <WorkingSVG width={"40vw"} height={"40vh"} />
          </div>
       </div>

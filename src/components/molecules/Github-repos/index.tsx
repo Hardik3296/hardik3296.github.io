@@ -1,10 +1,11 @@
-import { Dispatch, memo, SetStateAction, useContext, useEffect, useState } from "react";
+import { Dispatch, memo, SetStateAction, useContext, useEffect, useRef, useState } from "react";
 import { StarOutlineOutlined } from "@material-ui/icons";
 import axios, { AxiosResponse } from "axios";
 import styles from "./styles.module.scss";
 import image from "../../../assets/images/code-fork.png";
 import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
 import useAsyncError from "../../../utils/AsyncErrorHandler";
+import animationStyles from "../../../assets/animation.module.scss";
 
 interface repoType {
    repo: string,
@@ -15,9 +16,10 @@ interface repoType {
 }
 
 const GitHubRepos = (): JSX.Element => {
-
+   const [animation, setAnimation] = useState<boolean>(false);
    const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    const [pinnedRepos, setPinnedRepos] = useState([]);
+   const ref = useRef<HTMLDivElement>(null);
    const createError = useAsyncError();
    const compareFunc = (firstParam: repoType, secondParam: repoType): boolean => {
       return firstParam.forks > secondParam.forks;
@@ -25,6 +27,17 @@ const GitHubRepos = (): JSX.Element => {
 
    useEffect(() => {
       let results: AxiosResponse<any>, thrain: AxiosResponse<any>, emulator: AxiosResponse<any>;
+
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach(entry => {
+            if (entry.isIntersecting) {
+               setAnimation(true);
+               if (ref && ref.current)
+                  observer.unobserve(ref.current);
+            }
+         })
+      }, { root: null, rootMargin: '0px', threshold: 0.6 });
+
       const fetchData = async () => {
          try {
             results = await axios.get(`${process.env.REACT_APP_GITHUB_PINNED_REPOS}${process.env.REACT_APP_GITHUB_USERNAME}`);
@@ -41,6 +54,14 @@ const GitHubRepos = (): JSX.Element => {
       }
 
       fetchData();
+      if (ref && ref.current) {
+         observer.observe(ref.current);
+      }
+
+      return () => {
+         if (ref && ref.current)
+            observer.unobserve(ref.current);
+      }
    }, []);
 
    const handleClick = (link: string): void => {
@@ -48,7 +69,7 @@ const GitHubRepos = (): JSX.Element => {
    }
 
    return (
-      <div className={styles.container} id="github-repos" style={theme.text}>
+      <div className={`${styles.container} ${animation ? animationStyles.animateHorizontalDone : {}}`} id="github-repos" style={theme.text} ref={ref}>
          {pinnedRepos !== [] && pinnedRepos.map((repo: repoType) => {
             return (
                <div key={repo.repo} onClick={() => { handleClick(repo.link) }} className={styles.innerContainer} style={theme.repos.div}>

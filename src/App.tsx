@@ -16,8 +16,6 @@ function App(): JSX.Element {
   const profileRef = useRef<HTMLDivElement>();
 
   const handleScroll = (event: any): any => {
-    if (profileRef && profileRef.current)
-      console.log("ref=", (profileRef.current?.clientHeight - (0.13) * window.innerHeight), event.target.scrollTop);
     if (profileRef && profileRef.current && event.target.scrollTop >= profileRef?.current?.clientHeight - (0.13) * window.innerHeight)
       setHeaderVisible(true);
     else

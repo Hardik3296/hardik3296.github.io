@@ -14,12 +14,16 @@
       flex:1;
       align-items: center;
       justify-content: center;
+      opacity:0;
+      transform: translateX(-10%);
    }
    .textDiv{
       display:flex;
       flex:2;
       flex-direction: column;
       flex-wrap: wrap;
+      opacity:0;
+      transform: translateX(10%);
       .course{
          word-wrap: break-word;
          font-family: ArchivoBold;

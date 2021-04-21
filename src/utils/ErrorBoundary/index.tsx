@@ -8,10 +8,6 @@ interface MyProps {
 
 class ErrorBoundary extends Component<MyProps, {}> {
 
-   constructor(props: MyProps) {
-      super(props)
-   }
-
    state = {
       hasError: false
    }
@@ -21,7 +17,6 @@ class ErrorBoundary extends Component<MyProps, {}> {
    }
 
    componentDidCatch(error: any, errorInfo: any) {
-      console.log(error, errorInfo)
    }
    render() {
       if (this.state.hasError)

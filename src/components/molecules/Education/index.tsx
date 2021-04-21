@@ -1,9 +1,9 @@
-import { Dispatch, memo, SetStateAction, useContext, useEffect, useState } from "react";
+import { Dispatch, memo, SetStateAction, useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import EducationSVG from "../../atoms/EducationSvg";
 import styles from "./styles.module.scss";
 import { ThemeInterface, ThemeContext } from "../../../utils/contexts/ThemeContext";
-import SlideAnimation from "../../atoms/SlideAnimation";
+import animationStyles from "../../../assets/animation.module.scss";
 
 interface EducationData {
    name: string,
@@ -16,29 +16,44 @@ interface EducationData {
 }
 
 const Education = (): JSX.Element => {
-
+   const ref = useRef<HTMLDivElement>(null);
    const [education, setEducation] = useState<EducationData>();
+   const [animation, setAnimation] = useState<boolean>(false);
    const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
 
    useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach(entry => {
+            if (entry.isIntersecting) {
+               setAnimation(true);
+               if (ref && ref.current)
+                  observer.unobserve(ref.current);
+            }
+         })
+      }, { root: null, rootMargin: '0px', threshold: 0.6 });
+
       const fetchData = async () => {
          const data = await axios.get("./json/education.json");
          setEducation(data.data);
       }
+
       fetchData();
-   }, [])
+      if (ref && ref.current) {
+         observer.observe(ref.current);
+      }
+
+      return () => {
+         if (ref && ref.current)
+            observer.unobserve(ref.current);
+      }
+   }, []);
 
    return (
-      <div className={styles.container} id="education">
-         <div className={styles.imageDiv}>
-            <SlideAnimation
-               mountCondition={true}
-               slideDirection={"slide-from-left"}
-            >
-               <EducationSVG width={"40vw"} height={"40vh"} />
-            </SlideAnimation>
+      <div className={styles.container} id="education" ref={ref}>
+         <div className={`${styles.imageDiv} ${animation ? animationStyles.animateHorizontalDone : {}}`}>
+            <EducationSVG width={"40vw"} height={"40vh"} />
          </div>
-         <div className={styles.textDiv} style={theme.text}>
+         <div className={`${styles.textDiv} ${animation ? animationStyles.animateHorizontalDone : {}}`} style={theme.text}>
             {education?.data.map((record, index) => {
                return <div key={record.course + index}>
                   <p className={styles.course}>{record.course}</p>
