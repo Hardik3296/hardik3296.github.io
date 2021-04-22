@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Dispatch, memo, SetStateAction, useContext, useEffect, useRef, useState } from "react";
 import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
-import WorkingSVG from "../../atoms/WorkingSvg";
+import WorkingSVG from "../../../assets/svgs/WorkingSvg";
 import styles from "./styles.module.scss";
 import animationStyles from "../../../assets/animation.module.scss";
 
@@ -30,7 +30,7 @@ const WorkExperience = (): JSX.Element => {
                   observer.unobserve(ref.current);
             }
          })
-      }, { root: null, rootMargin: '0px', threshold: 0.6 });
+      }, { root: null, rootMargin: '0px', threshold: 0.3 });
 
       const fetchData = async () => {
          const data = await axios.get("./json/work-experience.json");

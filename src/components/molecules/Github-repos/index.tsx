@@ -31,12 +31,12 @@ const GitHubRepos = (): JSX.Element => {
       const observer = new IntersectionObserver((entries) => {
          entries.forEach(entry => {
             if (entry.isIntersecting) {
-               setAnimation(true);
                if (ref && ref.current)
                   observer.unobserve(ref.current);
+               setAnimation(true);
             }
          })
-      }, { root: null, rootMargin: '0px', threshold: 0.6 });
+      }, { root: null, rootMargin: '0px', threshold: 0.3 });
 
       const fetchData = async () => {
          try {
@@ -59,8 +59,9 @@ const GitHubRepos = (): JSX.Element => {
       }
 
       return () => {
-         if (ref && ref.current)
+         if (ref && ref.current) {
             observer.unobserve(ref.current);
+         }
       }
    }, []);
 

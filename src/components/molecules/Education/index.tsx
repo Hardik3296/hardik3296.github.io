@@ -1,6 +1,6 @@
 import { Dispatch, memo, SetStateAction, useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
-import EducationSVG from "../../atoms/EducationSvg";
+import EducationSVG from "../../../assets/svgs/EducationSvg";
 import styles from "./styles.module.scss";
 import { ThemeInterface, ThemeContext } from "../../../utils/contexts/ThemeContext";
 import animationStyles from "../../../assets/animation.module.scss";
@@ -30,7 +30,7 @@ const Education = (): JSX.Element => {
                   observer.unobserve(ref.current);
             }
          })
-      }, { root: null, rootMargin: '0px', threshold: 0.6 });
+      }, { root: null, rootMargin: '0px', threshold: 0.3 });
 
       const fetchData = async () => {
          const data = await axios.get("./json/education.json");

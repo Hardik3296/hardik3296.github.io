@@ -1,0 +1,28 @@
+@import "../../../fonts.scss";
+
+.container{
+   display:flex;
+   flex-direction:row;
+   align-items: center;
+   justify-content: center;
+   padding:5vh 15px;
+   @media(max-width:1024px){
+      margin-bottom:10vw;
+   }
+   p{
+      font-family: ArchivoMedium;
+      margin-right:20px;
+   }
+   .svg{
+      margin-right:2vw;
+      will-change: transform;
+      &:hover{
+         @media(min-width:1025px){
+            cursor: pointer;
+            transform: scale(1.2);
+            transition: transform 0.5s ease-in-out;
+         }
+        
+      }
+   }
+}

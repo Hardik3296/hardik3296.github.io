@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { GitHub, LinkedIn, Mail } from "@material-ui/icons";
-import GeeksForGeeks from "../../atoms/GeeksForGeeksSvg";
+import GeeksForGeeks from "../../../assets/svgs/GeeksForGeeksSvg";
 import { IconInterface } from "../../../utils/contexts/ThemeContext";
 import styles from "./styles.module.scss";
 

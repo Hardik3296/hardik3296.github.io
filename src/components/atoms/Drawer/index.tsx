@@ -2,7 +2,7 @@ import { Menu, MenuItem } from "@material-ui/core";
 import { GitHub, LinkedIn, Mail, Menu as MenuIcon } from "@material-ui/icons";
 import React, { Dispatch, memo, SetStateAction, useContext } from "react";
 import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
-import GeeksForGeeks from "../GeeksForGeeksSvg";
+import GeeksForGeeks from "../../../assets/svgs/GeeksForGeeksSvg";
 
 const DrawerComponent = (): JSX.Element => {
    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)

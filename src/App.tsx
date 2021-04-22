@@ -8,6 +8,7 @@ import { ThemeContext, ThemeInterface } from "./utils/contexts/ThemeContext";
 import { CSSTransition } from "react-transition-group";
 import "./animation.scss";
 import BottomNavbar from "./components/molecules/BottomNavbar";
+import Footer from "./components/organisms/Footer";
 
 
 function App(): JSX.Element {
@@ -42,6 +43,7 @@ function App(): JSX.Element {
             <Header />
           </CSSTransition>
           <Body profileRef={profileRef ? profileRef : { current: null }} />
+          <Footer />
         </div>
       </div >
       <BottomNavbar />
