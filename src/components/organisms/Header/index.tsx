@@ -11,12 +11,12 @@ const Header = (): JSX.Element => {
    const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    return (
       <div className={styles.container} style={theme.header}>
-         <img src={image} className={styles.image} alt="" />
-         <p className={styles.name} style={theme.text}>Hardik Gaur</p>
-         <div className={styles.iconDiv}>
+         <img src={image} className={styles.image} alt="My pic" test-id="image" />
+         <p className={styles.name} style={theme.text} test-id="name">Hardik Gaur</p>
+         <div className={styles.iconDiv} test-id="social-media">
             <SocialMedia size={35} icons={theme.icons} />
          </div>
-         <div className={styles.drawerDiv}>
+         <div className={styles.drawerDiv} test-id="menu">
             <DrawerComponent />
          </div>
       </div>

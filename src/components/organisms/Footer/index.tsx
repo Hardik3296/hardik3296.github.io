@@ -5,6 +5,7 @@ import Icons8SVG from "../../../assets/svgs/Icons8SVG";
 import MaterialUISVG from "../../../assets/svgs/MaterialUISVG";
 import ReactSVG from "../../../assets/svgs/ReactSVG";
 import SassSVG from "../../../assets/svgs/SassSVG";
+import TypeScriptSVG from "../../../assets/svgs/TypeScriptSVG";
 
 
 const Footer = (): JSX.Element => {
@@ -17,11 +18,12 @@ const Footer = (): JSX.Element => {
 
    return (
       <div className={styles.container} style={{ backgroundColor: theme.repos.div.background }}>
-         <p style={theme.text}>Made with </p>
-         <ReactSVG height={50} width={50} className={styles.svg} onClick={() => handleCLick("https://reactjs.org/")} />
-         <SassSVG height={50} width={50} className={styles.svg} onClick={() => handleCLick("https://sass-lang.com/")} />
-         <MaterialUISVG height={50} width={50} className={styles.svg} onClick={() => handleCLick("https://material-ui.com/")} />
-         <Icons8SVG height={50} width={50} className={styles.svg} onClick={() => handleCLick("https://icons8.com/")} />
+         <p style={theme.text} test-id="text">Made with </p>
+         <ReactSVG test-id="react-icon" height={50} width={50} className={styles.svg} onClick={() => handleCLick("https://reactjs.org/")} />
+         <SassSVG test-id="sass-icon" height={50} width={50} className={styles.svg} onClick={() => handleCLick("https://sass-lang.com/")} />
+         <MaterialUISVG test-id="material-icon" height={50} width={50} className={styles.svg} onClick={() => handleCLick("https://material-ui.com/")} />
+         <Icons8SVG test-id="icons8-icon" height={50} width={50} className={styles.svg} onClick={() => handleCLick("https://icons8.com/")} />
+         <TypeScriptSVG test-id="typescript-icon" height={50} width={50} className={styles.svg} onClick={() => handleCLick("https://www.typescriptlang.org/")} />
       </div>
    );
 }

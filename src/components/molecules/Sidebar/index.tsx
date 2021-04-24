@@ -13,10 +13,10 @@ const Sidebar = (): JSX.Element => {
    return (
       <div className={styles.container}>
          <div className={styles.topIconDiv}>
-            <a href="#me"><Person style={{ color: "#6c63ff", fontSize: "12vh" }} /></a>
-            <a href="#education"><img src={studyImage} alt="" style={{ width: "12vh", height: "12vh" }} /></a>
-            <a href="#work-experience"><img src={newJob} alt="" style={{ width: "12vh", height: "12vh" }} /></a>
-            <a href="#github-repos"><GitHub style={{ color: "#6c63ff", fontSize: "10vh" }} /></a>
+            <a href="#me" test-id="me"><Person style={{ color: "#6c63ff", fontSize: "12vh" }} /></a>
+            <a href="#education" test-id="education"><img src={studyImage} alt="" style={{ width: "12vh", height: "12vh" }} /></a>
+            <a href="#work-experience" test-id="work-experience"><img src={newJob} alt="" style={{ width: "12vh", height: "12vh" }} /></a>
+            <a href="#github-repos" test-id="github-repos"><GitHub style={{ color: "#6c63ff", fontSize: "10vh" }} /></a>
          </div>
          <SwitchTransition>
             <CSSTransition
@@ -25,7 +25,7 @@ const Sidebar = (): JSX.Element => {
                addEndListener={() => { }}
                timeout={500}
             >
-               <div className={styles.bottomIconDiv} onClick={() => {
+               <div test-id="theme-icon" className={styles.bottomIconDiv} onClick={() => {
                   themeRef.current = themeRef.current === "light" ? "dark" : "light";
                   setTheme(theme === themes.light ? themes.dark : themes.light)
                }}>

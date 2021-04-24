@@ -50,9 +50,9 @@ const WorkExperience = (): JSX.Element => {
 
    return (
       <div className={styles.container} id="work-experience" style={theme.text} ref={ref}>
-         <div className={`${styles.textDiv} ${animation ? animationStyles.animateHorizontalDone : {}}`}>
+         <div className={`${styles.textDiv} ${animation ? animationStyles.animateHorizontalDone : {}}`} test-id="parentDiv">
             {workEx?.data.map((record) => {
-               return <div key={record.organization + record.position}>
+               return <div key={record.organization + record.position} test-id="repos">
                   <p className={styles.position}>{record.position}</p>
                   <p className={styles.organization}>{record.organization}</p>
                   {record?.details.map((description, index) => {

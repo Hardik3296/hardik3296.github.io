@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile component Should render correcty 1`] = `
+<div
+  className="row"
+  id="me"
+  style={
+    Object {
+      "color": "#000000",
+    }
+  }
+>
+  <div
+    className="firstDiv"
+    test-id="image-div"
+  >
+    <div
+      className="errorDiv"
+    >
+      <p
+        style={
+          Object {
+            "color": "#B00020",
+          }
+        }
+      >
+        Something went wrong while fetching the repositories!!
+      </p>
+    </div>
+  </div>
+  <div
+    className="secondDiv"
+  >
+    <div
+      className="errorDiv"
+    >
+      <p
+        style={
+          Object {
+            "color": "#B00020",
+          }
+        }
+      >
+        Something went wrong while fetching the repositories!!
+      </p>
+    </div>
+    <div
+      className="errorDiv"
+    >
+      <p
+        style={
+          Object {
+            "color": "#B00020",
+          }
+        }
+      >
+        Something went wrong while fetching the repositories!!
+      </p>
+    </div>
+  </div>
+</div>
+`;
