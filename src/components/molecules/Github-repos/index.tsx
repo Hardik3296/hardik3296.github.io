@@ -73,13 +73,13 @@ const GitHubRepos = (): JSX.Element => {
       <div className={`${styles.container} ${animation ? animationStyles.animateHorizontalDone : {}}`} id="github-repos" style={theme.text} ref={ref}>
          {pinnedRepos !== [] && pinnedRepos.map((repo: repoType) => {
             return (
-               <div key={repo.repo} onClick={() => { handleClick(repo.link) }} className={styles.innerContainer} style={theme.repos.div}>
-                  <p className={styles.repo}>{repo.repo.toUpperCase()}</p>
-                  <div className={styles.row}>
+               <div test-id="repo" key={repo.repo} onClick={() => { handleClick(repo.link) }} className={styles.innerContainer} style={theme.repos.div}>
+                  <p test-id="repo-name" className={styles.repo}>{repo.repo.toUpperCase()}</p>
+                  <div test-id="repo-info" className={styles.row}>
                      <span className={styles.stars}><StarOutlineOutlined style={{ color: "#6c63ff", fontSize: 28 }} />{repo.stars}</span>
                      <span className={styles.forks}><img src={image} alt="" style={{ width: 28, height: 28 }} />{repo.forks}</span>
                   </div>
-                  <p className={styles.description}>{repo.description}</p>
+                  <p test-id="repo-description" className={styles.description}>{repo.description}</p>
                </div>
             );
          })}

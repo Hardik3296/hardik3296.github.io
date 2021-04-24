@@ -14,10 +14,10 @@ const BottomNavbar = (): JSX.Element => {
 
    return (
       <div className={bottomStyles.bottomNavigation} style={theme.sidebar}>
-         <a href="#me"><Person className={styles.person} /></a>
-         <a href="#education"><img src={studyImage} alt="" className={styles.imageIcons} /></a>
-         <a href="#work-experience"><img src={newJob} alt="" className={styles.imageIcons} /></a>
-         <a href="#github-repos"><GitHub className={styles.github} /></a>
+         <a href="#me" test-id="me"><Person className={styles.person} /></a>
+         <a href="#education" test-id="Education"><img src={studyImage} alt="" className={styles.imageIcons} /></a>
+         <a href="#work-experience" test-id="WorkEx"><img src={newJob} alt="" className={styles.imageIcons} /></a>
+         <a href="#github-repos" test-id="GithubRepos"><GitHub className={styles.github} /></a>
          <SwitchTransition>
             <CSSTransition
                key={themeRef.current}
@@ -25,7 +25,7 @@ const BottomNavbar = (): JSX.Element => {
                addEndListener={() => { }}
                timeout={500}
             >
-               <div className={styles.bottomIconDiv} onClick={() => {
+               <div test-id="ThemeIcon" className={styles.bottomIconDiv} onClick={() => {
                   themeRef.current = themeRef.current === "light" ? "dark" : "light";
                   setTheme(theme === themes.light ? themes.dark : themes.light)
                }}>
@@ -36,7 +36,7 @@ const BottomNavbar = (): JSX.Element => {
                </div>
             </CSSTransition>
          </SwitchTransition>
-      </div >
+      </div>
    );
 }
 

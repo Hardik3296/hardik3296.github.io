@@ -23,24 +23,24 @@ const DrawerComponent = (): JSX.Element => {
       <>
          <MenuIcon onClick={handleClick} style={{ color: theme.text.color }} />
          <Menu open={Boolean(anchorEl)} onClose={handleClose} anchorEl={anchorEl} MenuListProps={{ disablePadding: true, autoFocus: false }}>
-            <MenuItem style={theme.sidebar} onClick={() => handleIconClick("https://www.linkedin.com/in/hardik-gaur-135891122/", "_blank")}>
+            <MenuItem test-id="LinkedIn" style={theme.sidebar} onClick={() => handleIconClick("https://www.linkedin.com/in/hardik-gaur-135891122/", "_blank")}>
                <LinkedIn
                   style={{ color: theme.icons.linkedin.color, fontSize: 35, marginRight: 20, }} />
                <span style={theme.text}>Linkedin</span>
             </MenuItem>
-            <MenuItem style={theme.sidebar} onClick={() => handleIconClick("mailto:hardik3296@outlook.com", "_self")}>
+            <MenuItem test-id="Mail" style={theme.sidebar} onClick={() => handleIconClick("mailto:hardik3296@outlook.com", "_self")}>
                <Mail
                   style={{ color: theme.icons.mail.color, fontSize: 35, marginRight: 20, }}
                />
                <span style={theme.text}>Mail</span></MenuItem>
-            <MenuItem style={theme.sidebar} onClick={() => handleIconClick("https://auth.geeksforgeeks.org/user/HGaur/articles", "_blank")} >
+            <MenuItem  test-id="GeeksForGeeks" style={theme.sidebar} onClick={() => handleIconClick("https://auth.geeksforgeeks.org/user/HGaur/articles", "_blank")} >
                <GeeksForGeeks
                   width={35}
                   height={35}
                   color={theme.icons.mail.color}
                />
                <span style={iconStyle}>Geeksforgeeks</span></MenuItem>
-            <MenuItem style={theme.sidebar} onClick={() => handleIconClick("https://github.com/Hardik3296", "_blank")}>
+            <MenuItem test-id="Github" style={theme.sidebar} onClick={() => handleIconClick("https://github.com/Hardik3296", "_blank")}>
                <GitHub
                   style={{ color: theme.icons.github.color, fontSize: 35, marginRight: 20, }} />
                <span style={theme.text}>Github</span></MenuItem>

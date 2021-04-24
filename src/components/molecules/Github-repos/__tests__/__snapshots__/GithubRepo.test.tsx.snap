@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Github Repos Should render correctly 1`] = `
+<div
+  className="container [object Object]"
+  id="github-repos"
+  style={
+    Object {
+      "color": "#000000",
+    }
+  }
+/>
+`;

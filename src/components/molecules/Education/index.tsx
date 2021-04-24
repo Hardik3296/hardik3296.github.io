@@ -50,12 +50,12 @@ const Education = (): JSX.Element => {
 
    return (
       <div className={styles.container} id="education" ref={ref}>
-         <div className={`${styles.imageDiv} ${animation ? animationStyles.animateHorizontalDone : {}}`}>
+         <div test-id="image-div" className={`${styles.imageDiv} ${animation ? animationStyles.animateHorizontalDone : {}}`}>
             <EducationSVG width={"40vw"} height={"40vh"} />
          </div>
-         <div className={`${styles.textDiv} ${animation ? animationStyles.animateHorizontalDone : {}}`} style={theme.text}>
+         <div test-id="text-div" className={`${styles.textDiv} ${animation ? animationStyles.animateHorizontalDone : {}}`} style={theme.text}>
             {education?.data.map((record, index) => {
-               return <div key={record.course + index}>
+               return <div test-id="records" key={record.course + index}>
                   <p className={styles.course}>{record.course}</p>
                   <p className={styles.institution}>{record.institution}</p>
                   <p className={styles.score}>{record.score}</p>
