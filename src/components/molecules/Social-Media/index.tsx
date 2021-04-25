@@ -1,5 +1,5 @@
-import { memo } from "react";
 import { GitHub, LinkedIn, Mail } from "@material-ui/icons";
+import { memo } from "react";
 import GeeksForGeeks from "../../../assets/svgs/GeeksForGeeksSvg";
 import { IconInterface } from "../../../utils/contexts/ThemeContext";
 import styles from "./styles.module.scss";
@@ -10,7 +10,7 @@ type PropTypes = {
    maxWidth?: string
 };
 
-const SocialMedia = memo(({ size, icons }: PropTypes) => {
+const SocialMedia = ({ size, icons }: PropTypes) => {
 
    const handleClick = (link: string, target: string): void => {
       window.open(link, target)
@@ -42,6 +42,6 @@ const SocialMedia = memo(({ size, icons }: PropTypes) => {
             onClick={() => { handleClick("https://github.com/Hardik3296", "_blank") }} />
       </>
    );
-});
+};
 
 export default memo(SocialMedia);

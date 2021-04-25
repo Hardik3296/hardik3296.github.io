@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useContext, memo, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useRef } from "react";
 import { GitHub, NightsStay, Person, WbSunny } from "@material-ui/icons";
 import studyImage from "../../../assets/images/study.png";
 import newJob from "../../../assets/images/new-job.png";
@@ -8,16 +8,21 @@ import styles from "../Sidebar/styles.module.scss";
 import bottomStyles from "./styles.module.scss";
 import { ThemeContext, ThemeInterface, themes } from "../../../utils/contexts/ThemeContext";
 
+const handleClick = (link: string): void => {
+   window.location.hash = link;
+}
+
 const BottomNavbar = (): JSX.Element => {
+
    const [theme, setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    const themeRef = useRef(theme === themes.light ? "light" : "dark");
 
    return (
       <div className={bottomStyles.bottomNavigation} style={theme.sidebar}>
-         <a href="#me" test-id="me"><Person className={styles.person} /></a>
-         <a href="#education" test-id="Education"><img src={studyImage} alt="" className={styles.imageIcons} /></a>
-         <a href="#work-experience" test-id="WorkEx"><img src={newJob} alt="" className={styles.imageIcons} /></a>
-         <a href="#github-repos" test-id="GithubRepos"><GitHub className={styles.github} /></a>
+         <div test-id="me" onClick={() => handleClick("me")}><Person className={styles.person} /></div>
+         <div test-id="Education" onClick={() => handleClick("education")}><img src={studyImage} alt="" className={styles.imageIcons} /></div>
+         <div test-id="WorkEx" onClick={() => handleClick("work-experience")}><img src={newJob} alt="" className={styles.imageIcons} /></div>
+         <div test-id="GithubRepos" onClick={() => handleClick("github-repos")}><GitHub className={styles.github} /></div>
          <SwitchTransition>
             <CSSTransition
                key={themeRef.current}
@@ -40,4 +45,4 @@ const BottomNavbar = (): JSX.Element => {
    );
 }
 
-export default memo(BottomNavbar);
+export default BottomNavbar;

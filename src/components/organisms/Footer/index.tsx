@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useContext } from "react";
+import { Dispatch, memo, SetStateAction, useContext } from "react";
 import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
 import styles from "./styles.module.scss";
 import Icons8SVG from "../../../assets/svgs/Icons8SVG";
@@ -10,14 +10,14 @@ import TypeScriptSVG from "../../../assets/svgs/TypeScriptSVG";
 
 const Footer = (): JSX.Element => {
 
-   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
 
    const handleCLick = (link: string): void => {
       window.open(link, "_blank");
    }
 
    return (
-      <div className={styles.container} style={{ backgroundColor: theme.repos.div.background }}>
+      <div className={styles.container} style={{ backgroundColor: theme.body.backgroundColor }}>
          <p style={theme.text} test-id="text">Made with </p>
          <ReactSVG test-id="react-icon" height={50} width={50} className={styles.svg} onClick={() => handleCLick("https://reactjs.org/")} />
          <SassSVG test-id="sass-icon" height={50} width={50} className={styles.svg} onClick={() => handleCLick("https://sass-lang.com/")} />
@@ -28,4 +28,4 @@ const Footer = (): JSX.Element => {
    );
 }
 
-export default Footer;
+export default memo(Footer);

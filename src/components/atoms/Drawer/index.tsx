@@ -1,12 +1,12 @@
 import { Menu, MenuItem } from "@material-ui/core";
 import { GitHub, LinkedIn, Mail, Menu as MenuIcon } from "@material-ui/icons";
-import React, { Dispatch, memo, SetStateAction, useContext } from "react";
+import React, { Dispatch, SetStateAction, useContext } from "react";
 import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
 import GeeksForGeeks from "../../../assets/svgs/GeeksForGeeksSvg";
 
 const DrawerComponent = (): JSX.Element => {
    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    const iconStyle = { ...theme.text, marginLeft: 20 };
 
    const handleClose = () => {
@@ -33,7 +33,7 @@ const DrawerComponent = (): JSX.Element => {
                   style={{ color: theme.icons.mail.color, fontSize: 35, marginRight: 20, }}
                />
                <span style={theme.text}>Mail</span></MenuItem>
-            <MenuItem  test-id="GeeksForGeeks" style={theme.sidebar} onClick={() => handleIconClick("https://auth.geeksforgeeks.org/user/HGaur/articles", "_blank")} >
+            <MenuItem test-id="GeeksForGeeks" style={theme.sidebar} onClick={() => handleIconClick("https://auth.geeksforgeeks.org/user/HGaur/articles", "_blank")} >
                <GeeksForGeeks
                   width={35}
                   height={35}
@@ -49,4 +49,4 @@ const DrawerComponent = (): JSX.Element => {
    );
 }
 
-export default memo(DrawerComponent);
+export default DrawerComponent;

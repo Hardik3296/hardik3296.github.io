@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Dispatch, memo, SetStateAction, useContext, useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useEffect, useRef, useState } from "react";
 import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
 import WorkingSVG from "../../../assets/svgs/WorkingSvg";
 import styles from "./styles.module.scss";
@@ -18,7 +18,7 @@ const WorkExperience = (): JSX.Element => {
 
    const [workEx, setWorkEx] = useState<WorkEx>();
    const [animation, setAnimation] = useState<boolean>(false);
-   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    const ref = useRef<HTMLDivElement>(null);
 
    useEffect(() => {
@@ -68,4 +68,4 @@ const WorkExperience = (): JSX.Element => {
    );
 }
 
-export default memo(WorkExperience);
+export default WorkExperience;

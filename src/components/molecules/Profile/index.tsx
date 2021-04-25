@@ -8,7 +8,7 @@ import ErrorBoundary from "../../../utils/ErrorBoundary";
 
 const Profile = ({ profileRef }: { profileRef: MutableRefObject<HTMLDivElement> }): JSX.Element => {
 
-   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
 
    return (
       <div className={styles.row} id="me" style={theme.text} ref={profileRef}>

@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useContext, memo } from "react";
+import { Dispatch, memo, SetStateAction, useContext } from "react";
 import SocialMedia from "../../molecules/Social-Media";
 import image from "../../../assets/images/me.jpg"
 import styles from "./styles.module.scss";
@@ -8,7 +8,7 @@ import DrawerComponent from "../../atoms/Drawer";
 
 const Header = (): JSX.Element => {
 
-   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    return (
       <div className={styles.container} style={theme.header}>
          <img src={image} className={styles.image} alt="My pic" test-id="image" />

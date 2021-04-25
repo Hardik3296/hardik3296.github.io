@@ -19,7 +19,7 @@ const Education = (): JSX.Element => {
    const ref = useRef<HTMLDivElement>(null);
    const [education, setEducation] = useState<EducationData>();
    const [animation, setAnimation] = useState<boolean>(false);
-   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
 
    useEffect(() => {
       const observer = new IntersectionObserver((entries) => {

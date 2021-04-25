@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useContext, memo, useState, } from "react";
+import { Dispatch, SetStateAction, useContext, memo } from "react";
 import Profile from "../../molecules/Profile";
 import GitHubRepos from "../../molecules/Github-repos";
 import Education from "../../molecules/Education";
@@ -9,7 +9,7 @@ import ErrorBoundary from "../../../utils/ErrorBoundary";
 
 const Body = ({ profileRef }: { profileRef: any }): JSX.Element => {
 
-   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
 
    return (
       <div className={styles.container} style={theme.body}>

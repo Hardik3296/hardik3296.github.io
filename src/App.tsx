@@ -1,4 +1,4 @@
-import { Dispatch, memo, SetStateAction, useCallback, useContext, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useCallback, useContext, useRef, useState } from "react";
 import { throttle } from "lodash";
 import styles from "./app.module.scss";
 import Sidebar from "./components/molecules/Sidebar";
@@ -13,7 +13,7 @@ import Footer from "./components/organisms/Footer";
 
 function App(): JSX.Element {
   const [headerVisible, setHeaderVisible] = useState<boolean>(false);
-  const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+  const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
   const profileRef = useRef<HTMLDivElement>();
 
   const handleScroll = (event: any): any => {
@@ -51,4 +51,4 @@ function App(): JSX.Element {
   );
 }
 
-export default memo(App);
+export default App;

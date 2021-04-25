@@ -17,7 +17,7 @@ interface repoType {
 
 const GitHubRepos = (): JSX.Element => {
    const [animation, setAnimation] = useState<boolean>(false);
-   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    const [pinnedRepos, setPinnedRepos] = useState([]);
    const ref = useRef<HTMLDivElement>(null);
    const createError = useAsyncError();
@@ -46,7 +46,7 @@ const GitHubRepos = (): JSX.Element => {
          } catch (e) {
             createError(e);
          }
-         let filteredResult = results.data.filter((details: repoType) => details.repo.toLowerCase() !== "thrain" && details.repo.toLowerCase() != "8085-emulator");
+         let filteredResult = results.data.filter((details: repoType) => details.repo.toLowerCase() !== "thrain" && details.repo.toLowerCase() !== "8085-emulator");
          filteredResult.push({ repo: thrain.data.name, stars: thrain.data.stargazers_count, forks: thrain.data.forks, description: thrain.data.description, link: thrain.data.html_url });
          filteredResult.push({ repo: emulator.data.name, stars: emulator.data.stargazers_count, forks: emulator.data.forks, description: emulator.data.description, link: emulator.data.html_url });
          await filteredResult.sort(compareFunc);
