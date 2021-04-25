@@ -8,7 +8,7 @@ import DrawerComponent from "../../atoms/Drawer";
 
 const Header = (): JSX.Element => {
 
-   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    return (
       <div className={styles.container} style={theme.header}>
          <img src={image} className={styles.image} alt="My pic" test-id="image" />

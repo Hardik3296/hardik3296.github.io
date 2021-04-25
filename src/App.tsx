@@ -13,7 +13,7 @@ import Footer from "./components/organisms/Footer";
 
 function App(): JSX.Element {
   const [headerVisible, setHeaderVisible] = useState<boolean>(false);
-  const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+  const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
   const profileRef = useRef<HTMLDivElement>();
 
   const handleScroll = (event: any): any => {

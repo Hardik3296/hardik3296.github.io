@@ -12,6 +12,9 @@
    }
    padding-top: 18vh;
    margin-top:-13vh;
+   &>div:last-child{
+     margin-bottom: 0;
+   }
    & > div {
     flex: 1 1 300px;
     margin-bottom:20px;

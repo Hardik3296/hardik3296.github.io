@@ -17,7 +17,7 @@ interface repoType {
 
 const GitHubRepos = (): JSX.Element => {
    const [animation, setAnimation] = useState<boolean>(false);
-   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    const [pinnedRepos, setPinnedRepos] = useState([]);
    const ref = useRef<HTMLDivElement>(null);
    const createError = useAsyncError();

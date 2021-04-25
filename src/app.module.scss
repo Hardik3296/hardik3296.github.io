@@ -14,7 +14,7 @@ body{
 .container{
    display:flex;
    flex:1;
-   height:90vh;
+   height:100vh;
    flex-direction: row;
 }
 .sidebar{
@@ -34,10 +34,10 @@ body{
    position: relative;
    overflow-x: hidden;
    flex-direction: column;
-   height:100vh;
    flex:9;
    @media (max-width:1024px){
       flex:1;
+      margin-bottom:7vh;
     }
    overflow-y:scroll;
    scroll-behavior: smooth;

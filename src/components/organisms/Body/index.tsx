@@ -9,7 +9,7 @@ import ErrorBoundary from "../../../utils/ErrorBoundary";
 
 const Body = ({ profileRef }: { profileRef: any }): JSX.Element => {
 
-   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
 
    return (
       <div className={styles.container} style={theme.body}>

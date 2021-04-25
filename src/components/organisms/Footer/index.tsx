@@ -10,7 +10,7 @@ import TypeScriptSVG from "../../../assets/svgs/TypeScriptSVG";
 
 const Footer = (): JSX.Element => {
 
-   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
 
    const handleCLick = (link: string): void => {
       window.open(link, "_blank");

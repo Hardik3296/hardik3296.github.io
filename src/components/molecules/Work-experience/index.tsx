@@ -18,7 +18,7 @@ const WorkExperience = (): JSX.Element => {
 
    const [workEx, setWorkEx] = useState<WorkEx>();
    const [animation, setAnimation] = useState<boolean>(false);
-   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    const ref = useRef<HTMLDivElement>(null);
 
    useEffect(() => {

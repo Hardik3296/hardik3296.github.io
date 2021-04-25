@@ -6,7 +6,7 @@ import GeeksForGeeks from "../../../assets/svgs/GeeksForGeeksSvg";
 
 const DrawerComponent = (): JSX.Element => {
    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-   const [theme, _setTheme] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
+   const [theme, _] = useContext<[ThemeInterface, Dispatch<SetStateAction<ThemeInterface>>]>(ThemeContext);
    const iconStyle = { ...theme.text, marginLeft: 20 };
 
    const handleClose = () => {
