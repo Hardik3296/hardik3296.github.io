@@ -1,5 +1,5 @@
 import { Dispatch, memo, MutableRefObject, SetStateAction, useContext } from "react";
-import image from "../../../assets/images/me.jpg";
+import image from "../../../assets/images/me.webp";
 import styles from "./styles.module.scss";
 import SocialMedia from "../Social-Media";
 import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
