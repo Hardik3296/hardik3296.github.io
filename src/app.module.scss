@@ -8,13 +8,13 @@ body{
 .outerContainer{
    height:100vh;
    overflow-y: hidden;
-   overflow-x:hidden;
+   overflow-x: hidden;
 }
 
 .container{
    display:flex;
    flex:1;
-   height:100vh;
+   height:90vh;
    flex-direction: row;
 }
 .sidebar{

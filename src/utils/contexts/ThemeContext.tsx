@@ -64,7 +64,7 @@ export const themes: ThemeArrayInterface = {
       repos: {
          div: {
             background: "rgba( 255, 255, 255, 0.0005 )",
-            boxShadow: "0 10px 20px 2px rgba( 31, 38, 135, 0.37 )"
+            boxShadow: "0 5px 20px 2px rgba( 31, 38, 135, 0.37 )"
          }
       },
       text: {
@@ -102,7 +102,7 @@ export const themes: ThemeArrayInterface = {
       repos: {
          div: {
             background: "rgba( 40, 40, 40, 0.25 )",
-            boxShadow: "0 10px 20px 2px rgba(0, 0, 0, 0.85)"
+            boxShadow: "0 5px 20px 2px rgba(0, 0, 0, 0.85)"
          }
       },
       text: {
