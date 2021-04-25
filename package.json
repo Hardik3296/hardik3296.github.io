@@ -2,7 +2,7 @@
   "name": "hardik-github.io",
   "version": "0.1.0",
   "homepage": "https://hardik3296.github.io/",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
