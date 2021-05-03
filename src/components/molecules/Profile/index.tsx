@@ -30,7 +30,7 @@ const Profile = ({ profileRef }: { profileRef: MutableRefObject<HTMLDivElement> 
                   slideDirection={"slide-in-from-bottom"}
                >
                   <div className={styles.contact} test-id="social-icons">
-                     <SocialMedia size={50} icons={theme.icons} />
+                     <SocialMedia size={window.innerWidth > 320 ? 50 : 35} icons={theme.icons} />
                   </div>
                </SlideAnimation>
             </ErrorBoundary>

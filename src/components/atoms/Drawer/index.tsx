@@ -3,6 +3,7 @@ import { GitHub, LinkedIn, Mail, Menu as MenuIcon } from "@material-ui/icons";
 import React, { Dispatch, SetStateAction, useContext } from "react";
 import { ThemeContext, ThemeInterface } from "../../../utils/contexts/ThemeContext";
 import GeeksForGeeks from "../../../assets/svgs/GeeksForGeeksSvg";
+import Medium from "../../../assets/svgs/MediumSVG";
 
 const DrawerComponent = (): JSX.Element => {
    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
@@ -28,22 +29,33 @@ const DrawerComponent = (): JSX.Element => {
                   style={{ color: theme.icons.linkedin.color, fontSize: 35, marginRight: 20, }} />
                <span style={theme.text}>Linkedin</span>
             </MenuItem>
+            <MenuItem test-id="Medium" style={theme.sidebar} onClick={() => handleIconClick("https://medium.com/@hardikgaur3296", "_blank")}>
+               <Medium
+                  width={35}
+                  height={35}
+                  color={theme.icons.mail.color}
+               />
+               <span style={Object.assign({}, theme.text, { marginLeft: 20 })}>Medium</span>
+            </MenuItem>
             <MenuItem test-id="Mail" style={theme.sidebar} onClick={() => handleIconClick("mailto:hardik3296@outlook.com", "_self")}>
                <Mail
                   style={{ color: theme.icons.mail.color, fontSize: 35, marginRight: 20, }}
                />
-               <span style={theme.text}>Mail</span></MenuItem>
+               <span style={theme.text}>Mail</span>
+            </MenuItem>
             <MenuItem test-id="GeeksForGeeks" style={theme.sidebar} onClick={() => handleIconClick("https://auth.geeksforgeeks.org/user/HGaur/articles", "_blank")} >
                <GeeksForGeeks
                   width={35}
                   height={35}
                   color={theme.icons.mail.color}
                />
-               <span style={iconStyle}>Geeksforgeeks</span></MenuItem>
+               <span style={iconStyle}>Geeksforgeeks</span>
+            </MenuItem>
             <MenuItem test-id="Github" style={theme.sidebar} onClick={() => handleIconClick("https://github.com/Hardik3296", "_blank")}>
                <GitHub
                   style={{ color: theme.icons.github.color, fontSize: 35, marginRight: 20, }} />
-               <span style={theme.text}>Github</span></MenuItem>
+               <span style={theme.text}>Github</span>
+            </MenuItem>
          </Menu>
       </>
    );

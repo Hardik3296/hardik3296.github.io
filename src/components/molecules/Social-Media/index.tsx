@@ -1,6 +1,7 @@
 import { GitHub, LinkedIn, Mail } from "@material-ui/icons";
 import { memo } from "react";
 import GeeksForGeeks from "../../../assets/svgs/GeeksForGeeksSvg";
+import MediumSVG from "../../../assets/svgs/MediumSVG";
 import { IconInterface } from "../../../utils/contexts/ThemeContext";
 import styles from "./styles.module.scss";
 
@@ -23,10 +24,18 @@ const SocialMedia = ({ size, icons }: PropTypes) => {
             className={styles.icon}
             style={{ color: icons.linkedin.color, fontSize: size, marginRight: 20, }}
             onClick={() => { handleClick("https://www.linkedin.com/in/hardik-gaur-135891122/", "_blank") }} />
+         <MediumSVG
+            test-id="medium"
+            className={styles.icon}
+            width={size}
+            height={size}
+            color={icons.mail.color}
+            onClick={() => { handleClick("https://medium.com/@hardikgaur3296", "_blank") }}
+         />
          <Mail
             test-id="mail"
             className={styles.icon}
-            style={{ color: icons.mail.color, fontSize: size, marginRight: 20, }}
+            style={{ color: icons.mail.color, fontSize: size, marginRight: 20, marginLeft: 20 }}
             onClick={() => { handleClick("mailto:hardik3296@outlook.com", "_self") }} />
          <GeeksForGeeks
             test-id="geeksforgeeks"

@@ -39,6 +39,11 @@ describe("Social media Component", () => {
       expect(component.length).toBe(1);
    });
 
+   it("Should have 1 medium icon", () => {
+      const component = findAttributeByTestId(wrapper, "medium");
+      expect(component.length).toBe(1);
+   });
+
    it("Should render correctly", () => {
       const component = renderer.create(<SocialMeadia size={35} icons={icons} />).toJSON();
       expect(component).toMatchSnapshot();
