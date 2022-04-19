@@ -1,9 +1,9 @@
 @import "../../../fonts.scss";
 
 .container {
-   display:flex;
+   display: flex;
    flex-direction: row;
-   flex-wrap:wrap;
+   flex-wrap: wrap;
    opacity:0;
    transform: translateX(-10%);
    will-change: opacity, transform;
@@ -12,9 +12,7 @@
    }
    padding-top: 18vh;
    margin-top:-13vh;
-   &>div:last-child{
-     margin-bottom: 0;
-   }
+
    & > div {
     flex: 1 1 300px;
     margin-bottom:20px;
@@ -31,12 +29,12 @@
     border: 1px solid rgba( 0, 0, 0, 0.18 );
   }
   .innerContainer{
-    height:200px;
+    min-height: 180px;
     will-change: transform;
     &:hover{
       cursor: pointer;
       @media(min-width:1024px){
-        transform: scale(1.05);
+        transform: scale(1.03);
         transition:transform 0.3s linear;
       }
     }
